@@ -13,8 +13,10 @@ import { pdfToText } from "@/lib/pdf";
 import { useServerFn } from "@tanstack/react-start";
 import { analyzeResume, improveResume } from "@/lib/ai.functions";
 
+import { APP_NAME } from "@/components/Logo";
+
 export const Route = createFileRoute("/_authenticated/resume")({
-  head: () => ({ meta: [{ title: "Resume match — Workly" }] }),
+  head: () => ({ meta: [{ title: `Resume match — ${APP_NAME}` }] }),
   component: ResumePage,
 });
 

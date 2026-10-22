@@ -1,4 +1,4 @@
-# Workly
+# ADIT Career Bridge
 
 Your job search, on autopilot — free for everyone.
 

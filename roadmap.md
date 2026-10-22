@@ -1,27 +1,27 @@
-# Workly — continuation roadmap (from uploaded continuation prompt)
+# ADIT Career Bridge — continuation roadmap (phase 3)
 
-Source (adit-step1 repo) is now ported into this project; Lovable Cloud connected.
+Renamed from "Workly" in this pass. Backend on Lovable Cloud (fresh project, schema applied from `drizzle/migrations/*`).
 
 ## Done
-- [x] STEP 0 audit (see chat report)
-- [x] Port full app source, schema (resumes, watched_companies, jobs, applications w/ RLS + GRANTs), tests, assets
-- [x] Enable Lovable Cloud + email auth + Google sign-in
-- [x] Fix: toasts never appear → Sonner mounted in __root.tsx
-- [x] Fix: tab title "Lovable App" → "Workly — Your job search, on autopilot" + real meta/OG/favicon
-- [x] Paywall audit: clean (only "Stripe" the company name matches)
-- [x] README credits (Resume-Matcher: srbhr/Resume-Matcher)
+- [x] Phase 1–2 port (see git history / prior reports)
+- [x] STEP 0 audit, full app source + schema + tests ported, Lovable Cloud connected
+- [x] Email auth + Google + Lovable sign-in providers enabled on the new backend
+- [x] Toaster fix, meta/OG/favicon, paywall audit, README credits
+- [x] Rename Workly → ADIT Career Bridge (all code + docs; only `0000_workly_init` journal tag kept by design)
 
-## Remaining phases
-- [ ] E2E flow verification (signup → confirm → sign in → dashboard → radar scan → jobs → resume match → applications)
-- [ ] Resume-Matcher port phase 2: parsing improvements, rewrite suggestions, "improve" → resume_version table
-- [ ] JobRadar phase 2: LLM scoring with rules + local fallback, daily token budget, scheduled digest email + in-app alerts (alerts table, cron)
-- [ ] New tables for later phases: profiles, resume_versions, job_scores, follow_ups, alerts, integrations (owner-only RLS + GRANTs each)
-- [ ] AI tailoring + apply packages (PDF/DOCX export, confirmation before submit)
-- [ ] Follow-ups (Gmail OAuth w/ approval + caps), integrations page
-- [ ] Polish + tests
+## Remaining (phase 3)
+- [ ] Task 1: bug sweep — signed-in E2E flow (dashboard → scan → jobs → resume → tailor → package → export → applications → follow-ups), edge cases, empty/loading/error states, mobile 375px
+- [ ] Task 2: Settings — own AI key (encrypted, masked), alert settings in profiles, integrations status cards, export-all-data ZIP, delete-all-data with typed DELETE
+- [ ] Task 3: scheduled daily scan (cron, per-user budgets, alerts rows), notification bell + /alerts page, radar "New this week"/"Top scored" tabs + last-scan stamp
+- [ ] Task 4: digest emails (daily shortlist + weekly top-10, per-user prefs, unsubscribe toggle); templates + test-send button if no verified sending domain
+- [ ] Task 5: finish Resume-Matcher port (sections, JD parsing, keyword extraction, suggestions, versions; education/YoE, action verbs, quantification, ATS warnings)
+- [ ] Task 6: finish JobRadar port (seed list, stable IDs, lifecycle, scoring prompt, budget, digests, recap view)
+- [ ] Task 7: Gmail sending (OAuth gmail.send, tokens encrypted, 10/day cap, confirm dialog; mailto fallback if approval required)
+- [ ] Task 8: "Submit through ATS" where public endpoints exist (Greenhouse/Lever/Ashby), explicit confirm per job, record result
+- [ ] Task 9: tests, Zod validation, rate limits, RLS review, no-paywall grep, secrets audit, README final
 
 ## Hard rules
 - NO paywall of any kind; every user gets everything instantly. Only invisible generous rate limits ("try again later" + reset time).
-- Optional per-user LLM API key.
-- Resumes private per user (RLS). Secrets server-side only. Confirmation before any application submit / email send.
-- Keep Vite/React (TanStack) stack. Do not re-theme, do not regenerate whole files, small batched changes.
+- Optional per-user LLM API key. Secrets server-side only.
+- Resumes/data private per user (RLS). Confirmation before any application submit / email send. No scraping behind logins, no CAPTCHA bypass, no mass sending.
+- Keep the TanStack Start stack. Do not re-theme, do not regenerate whole files, small batched changes.

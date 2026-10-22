@@ -2,10 +2,11 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/PageHeader";
+import { APP_NAME } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_authenticated/settings")({
-  head: () => ({ meta: [{ title: "Settings — Workly" }] }),
+  head: () => ({ meta: [{ title: `Settings — ${APP_NAME}` }] }),
   component: SettingsPage,
 });
 
@@ -26,7 +27,7 @@ function SettingsPage() {
       </section>
       <section className="rounded-xl border bg-card p-5">
         <h2 className="mb-1 font-semibold">Your data</h2>
-        <p className="mb-4 text-sm text-muted-foreground">Remove everything you've stored in Workly.</p>
+        <p className="mb-4 text-sm text-muted-foreground">Remove everything you've stored in {APP_NAME}.</p>
         <Button variant="destructive" onClick={wipe}>Delete my data</Button>
       </section>
       <Button variant="outline" onClick={async () => { await supabase.auth.signOut(); navigate({ to: "/" }); }}>Log out</Button>

@@ -5,13 +5,14 @@ import { toast } from "sonner";
 import { ExternalLink } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/PageHeader";
+import { APP_NAME } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { exportDocx, exportPdf } from "@/lib/export";
 
 export const Route = createFileRoute("/_authenticated/package/$id")({
-  head: () => ({ meta: [{ title: "Application package — Workly" }] }),
+  head: () => ({ meta: [{ title: `Application package — ${APP_NAME}` }] }),
   component: PackagePage,
 });
 
@@ -82,7 +83,7 @@ function PackagePage() {
         {pkg.jobs?.url && <Button asChild disabled={pkg.status === "draft"}><a href={pkg.jobs.url} target="_blank" rel="noreferrer">Open official posting <ExternalLink size={14} /></a></Button>}
         <Button variant="outline" onClick={markApplied}>I've applied</Button>
       </div>
-      <p className="text-xs text-muted-foreground">Workly never submits applications for you. Apply on the company's own page, then mark it applied here.</p>
+      <p className="text-xs text-muted-foreground">{APP_NAME} never submits applications for you. Apply on the company's own page, then mark it applied here.</p>
     </div>
   );
 }

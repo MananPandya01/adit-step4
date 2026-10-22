@@ -2,9 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/PageHeader";
+import { APP_NAME } from "@/components/Logo";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
-  head: () => ({ meta: [{ title: "Dashboard — Workly" }] }),
+  head: () => ({ meta: [{ title: `Dashboard — ${APP_NAME}` }] }),
   component: Dashboard,
 });
 

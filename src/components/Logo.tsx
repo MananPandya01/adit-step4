@@ -1,4 +1,4 @@
-export const APP_NAME = "Workly";
+export const APP_NAME = "ADIT Career Bridge";
 
 export function Logo({ size = 32 }: { size?: number }) {
   return (
@@ -7,7 +7,10 @@ export function Logo({ size = 32 }: { size?: number }) {
         <circle cx="20" cy="20" r="18" className="fill-primary" />
         <path d="M11 14l4 13 5-9 5 9 4-13" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="stroke-primary-foreground" />
       </svg>
-      {APP_NAME}
+      <span className="inline-flex flex-col leading-none">
+        <span>ADIT</span>
+        <span className="text-[11px] font-semibold tracking-wide text-muted-foreground">Career Bridge</span>
+      </span>
     </span>
   );
 }

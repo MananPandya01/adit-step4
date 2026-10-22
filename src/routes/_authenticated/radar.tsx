@@ -8,12 +8,13 @@ import { supabase } from "@/integrations/supabase/client";
 import { scanRadar, scoreJobs, validateBoard } from "@/lib/radar.functions";
 import { ATS_LIST, ATS_SLUG_HINT, type Ats } from "@/lib/ats";
 import { PageHeader } from "@/components/PageHeader";
+import { APP_NAME } from "@/components/Logo";
 import { MatchBadge } from "@/components/ScoreRing";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 export const Route = createFileRoute("/_authenticated/radar")({
-  head: () => ({ meta: [{ title: "Radar — Workly" }] }),
+  head: () => ({ meta: [{ title: `Radar — ${APP_NAME}` }] }),
   component: RadarPage,
 });
 

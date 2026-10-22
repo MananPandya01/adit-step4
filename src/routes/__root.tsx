@@ -80,10 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Workly — Your job search, on autopilot" },
+      { title: "ADIT Career Bridge — Your job search, on autopilot" },
       { name: "description", content: "Free AI job search: resume match scores, company job board alerts, and an application tracker." },
-      { name: "author", content: "Workly" },
-      { property: "og:title", content: "Workly — Your job search, on autopilot" },
+      { name: "author", content: "ADIT Career Bridge" },
+      { property: "og:title", content: "ADIT Career Bridge — Your job search, on autopilot" },
       { property: "og:description", content: "Free AI resume matching, job alerts and application tracking." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
