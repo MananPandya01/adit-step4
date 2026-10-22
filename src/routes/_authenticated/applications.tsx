@@ -7,10 +7,11 @@ import { toast } from "sonner";
 import { Trash2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/PageHeader";
+import { APP_NAME } from "@/components/Logo";
 import { Textarea } from "@/components/ui/textarea";
 
 export const Route = createFileRoute("/_authenticated/applications")({
-  head: () => ({ meta: [{ title: "Applications — Workly" }] }),
+  head: () => ({ meta: [{ title: `Applications — ${APP_NAME}` }] }),
   component: Board,
 });
 

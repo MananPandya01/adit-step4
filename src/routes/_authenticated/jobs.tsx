@@ -7,12 +7,13 @@ import { toast } from "sonner";
 import { ExternalLink } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/PageHeader";
+import { APP_NAME } from "@/components/Logo";
 import { MatchBadge } from "@/components/ScoreRing";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 export const Route = createFileRoute("/_authenticated/jobs")({
-  head: () => ({ meta: [{ title: "Jobs — Workly" }] }),
+  head: () => ({ meta: [{ title: `Jobs — ${APP_NAME}` }] }),
   component: Jobs,
 });
 

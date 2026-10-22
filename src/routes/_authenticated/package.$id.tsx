@@ -5,13 +5,14 @@ import { toast } from "sonner";
 import { ExternalLink } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { PageHeader } from "@/components/PageHeader";
+import { APP_NAME } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { exportDocx, exportPdf } from "@/lib/export";
 
 export const Route = createFileRoute("/_authenticated/package/$id")({
-  head: () => ({ meta: [{ title: "Application package — Workly" }] }),
+  head: () => ({ meta: [{ title: `Application package — ${APP_NAME}` }] }),
   component: PackagePage,
 });
 
