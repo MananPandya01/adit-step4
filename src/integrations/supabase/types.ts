@@ -228,27 +228,27 @@ export type Database = {
       }
       integrations: {
         Row: {
-          created_at: string
-          encrypted_payload: string
+          access_encrypted: string | null
+          connected_at: string
           id: string
           provider: string
-          updated_at: string
+          scopes: string[]
           user_id: string
         }
         Insert: {
-          created_at?: string
-          encrypted_payload: string
+          access_encrypted?: string | null
+          connected_at?: string
           id?: string
           provider: string
-          updated_at?: string
+          scopes?: string[]
           user_id?: string
         }
         Update: {
-          created_at?: string
-          encrypted_payload?: string
+          access_encrypted?: string | null
+          connected_at?: string
           id?: string
           provider?: string
-          updated_at?: string
+          scopes?: string[]
           user_id?: string
         }
         Relationships: []
