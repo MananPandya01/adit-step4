@@ -27,7 +27,7 @@ function SettingsPage() {
       </section>
       <section className="rounded-xl border bg-card p-5">
         <h2 className="mb-1 font-semibold">Your data</h2>
-        <p className="mb-4 text-sm text-muted-foreground">Remove everything you've stored in Workly.</p>
+        <p className="mb-4 text-sm text-muted-foreground">Remove everything you've stored in {APP_NAME}.</p>
         <Button variant="destructive" onClick={wipe}>Delete my data</Button>
       </section>
       <Button variant="outline" onClick={async () => { await supabase.auth.signOut(); navigate({ to: "/" }); }}>Log out</Button>

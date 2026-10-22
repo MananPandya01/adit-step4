@@ -1,4 +1,4 @@
-# Workly — continuation roadmap (from uploaded continuation prompt)
+# ADIT Career Bridge — continuation roadmap (from uploaded continuation prompt)
 
 Source (adit-step1 repo) is now ported into this project; Lovable Cloud connected.
 
@@ -7,7 +7,7 @@ Source (adit-step1 repo) is now ported into this project; Lovable Cloud connecte
 - [x] Port full app source, schema (resumes, watched_companies, jobs, applications w/ RLS + GRANTs), tests, assets
 - [x] Enable Lovable Cloud + email auth + Google sign-in
 - [x] Fix: toasts never appear → Sonner mounted in __root.tsx
-- [x] Fix: tab title "Lovable App" → "Workly — Your job search, on autopilot" + real meta/OG/favicon
+- [x] Fix: tab title "Lovable App" → "ADIT Career Bridge — Your job search, on autopilot" + real meta/OG/favicon
 - [x] Paywall audit: clean (only "Stripe" the company name matches)
 - [x] README credits (Resume-Matcher: srbhr/Resume-Matcher)
 

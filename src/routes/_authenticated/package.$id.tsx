@@ -83,7 +83,7 @@ function PackagePage() {
         {pkg.jobs?.url && <Button asChild disabled={pkg.status === "draft"}><a href={pkg.jobs.url} target="_blank" rel="noreferrer">Open official posting <ExternalLink size={14} /></a></Button>}
         <Button variant="outline" onClick={markApplied}>I've applied</Button>
       </div>
-      <p className="text-xs text-muted-foreground">Workly never submits applications for you. Apply on the company's own page, then mark it applied here.</p>
+      <p className="text-xs text-muted-foreground">{APP_NAME} never submits applications for you. Apply on the company's own page, then mark it applied here.</p>
     </div>
   );
 }

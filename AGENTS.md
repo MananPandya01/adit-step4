@@ -1,4 +1,4 @@
-# Workly
+# ADIT Career Bridge (formerly "Workly")
 
 Job search assistant: AI resume matching, company job-board radar, application tracker.
 
